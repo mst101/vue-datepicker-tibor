@@ -1,0 +1,25 @@
+{
+  "name": "vue-web-components",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve --host localhost --port 8081",
+    "build": "cross-env vue-cli-service build --target wc-async --inline-vue --name web 'src/components/*.vue'"
+  },
+  "dependencies": {
+    "@alfsnd/vue-bootstrap-select": "^0.4.4",
+    "@sum.cumo/vue-datepicker": "^4.0.0",
+    "core-js": "^3.8.3",
+    "date-fns": "^2.27.0",
+    "vue": "^2.7.10",
+    "vuejs-datepicker": "^1.6.2"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^5.0.8",
+    "@vue/cli-service": "^5.0.8",
+    "cross-env": "^7.0.3",
+    "sass": "^1.54.9",
+    "sass-loader": "^8.0.0",
+    "vue-template-compiler": "^2.6.10"
+  }
+}
