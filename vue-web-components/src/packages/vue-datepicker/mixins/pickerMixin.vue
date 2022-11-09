@@ -271,6 +271,8 @@ export default {
         delta,
         stepsRemaining,
       }
+      console.log("We're expecting `document.activeElement` to be the currently focused date cell " +
+          "(i.e. a button element), but it is actually: ", document.activeElement)
 
       this.setFocusToAvailableCell(options)
     },
