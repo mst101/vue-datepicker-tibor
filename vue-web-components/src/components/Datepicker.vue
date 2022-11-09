@@ -52,8 +52,10 @@
 
 
 <script>
-import Datepicker from '@sum.cumo/vue-datepicker/dist/Datepicker.esm'
-import { sk } from '@sum.cumo/vue-datepicker/dist/locale/index.esm'
+// import Datepicker from '@sum.cumo/vue-datepicker/dist/Datepicker.esm'
+// import { sk } from '@sum.cumo/vue-datepicker/dist/locale/index.esm'
+import Datepicker from '../packages/vue-datepicker/components/Datepicker'
+import sk from '../packages/vue-datepicker/locale/translations/sk'
 
 import {sk as chartSk} from 'date-fns/locale';
 
