@@ -95,7 +95,6 @@ export default {
      * Emits an `arrow` event
      */
     handleArrow(cellId, delta) {
-      console.log('arrow', { cellId, delta })
       this.$emit('arrow', { cellId, delta })
     },
     isTabbableCell(cell, id) {
