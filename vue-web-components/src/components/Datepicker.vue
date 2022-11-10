@@ -17,7 +17,8 @@
                                 :language="sk"
                                 :disabled-dates="disabledDatesFrom"
                                 :highlighted="highlighted"
-                                format="d.M.yyyy"
+                                :format="customFormatter"
+                                :parser="customParser"
                                 first-day-of-week="mon"
                                 :typeable="true"
                                 :show-calendar-on-focus="true"
@@ -36,7 +37,8 @@
                                 :language="sk"
                                 :disabled-dates="disabledDatesTo"
                                 :highlighted="highlighted"
-                                format="d.M.yyyy"
+                                :format="customFormatter"
+                                :parser="customParser"
                                 first-day-of-week="mon"
                                 :typeable="true"
                                 :show-calendar-on-focus="true"
@@ -58,6 +60,7 @@ import Datepicker from '../packages/vue-datepicker/components/Datepicker'
 import sk from '../packages/vue-datepicker/locale/translations/sk'
 
 import {sk as chartSk} from 'date-fns/locale';
+import { format, parse } from 'date-fns'
 
 const state = {
     date1: new Date()
@@ -72,6 +75,7 @@ export default {
             dateFrom: new Date(),
             dateTo: new Date(),
             dateFromMonthsBack: 3,
+            format: 'd.M.yyyy',
             startDate: "",
             disabledDatesFrom: {
                 from: "",
@@ -95,6 +99,12 @@ export default {
         }
     },
     methods: {
+        customFormatter(date) {
+            return format(date, this.format)
+        },
+        customParser(date) {
+          return parse(date, this.format, new Date())
+        },
         setDisabledDates(){
             let self = this
             self.disabledDatesFrom = {
